@@ -1,0 +1,20 @@
+uuid: c5fe2075-8d99-43e2-b63a-f16d0419d082
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_catalog_relef
+field_name: field_catalog_relef
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

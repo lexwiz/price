@@ -1,0 +1,20 @@
+uuid: ddbe6774-9e36-4e53-bf5a-1f8219f0f7cf
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_stock
+field_name: field_stock
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

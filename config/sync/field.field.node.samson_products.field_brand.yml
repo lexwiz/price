@@ -1,0 +1,29 @@
+uuid: 38fe9817-abd9-455f-a6a4-8c194321a67b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand
+    - node.type.samson_products
+    - taxonomy.vocabulary.brand
+id: node.samson_products.field_brand
+field_name: field_brand
+entity_type: node
+bundle: samson_products
+label: Brand
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      brand: brand
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: brand
+field_type: entity_reference

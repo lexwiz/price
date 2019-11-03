@@ -1,0 +1,207 @@
+uuid: 59c132b8-b74e-4d3d-b3dc-b773cd8c9405
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.samson_products.body
+    - field.field.node.samson_products.field_barcode
+    - field.field.node.samson_products.field_brand
+    - field.field.node.samson_products.field_catalog_samson
+    - field.field.node.samson_products.field_country
+    - field.field.node.samson_products.field_min_pack
+    - field.field.node.samson_products.field_name
+    - field.field.node.samson_products.field_param
+    - field.field.node.samson_products.field_photo_path
+    - field.field.node.samson_products.field_photo_path_to_arena
+    - field.field.node.samson_products.field_price
+    - field.field.node.samson_products.field_shema
+    - field.field.node.samson_products.field_sku_m
+    - field.field.node.samson_products.field_step
+    - node.type.samson_products
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      79d02582-9d0f-4482-9c61-9aa30dc2895f:
+        find: ','
+        replace: .
+        case_sensitive: false
+        whole: false
+        plugin: find_replace
+        source: cena
+        weight: 0
+        label: 'Find replace'
+        word_boundaries: false
+        uuid: 79d02582-9d0f-4482-9c61-9aa30dc2895f
+      64de5218-ce40-4eb3-9473-fcb238776229:
+        operation: strtoupper
+        plugin: convert_case
+        source: strana
+        weight: 0
+        label: 'Convert case'
+        uuid: 64de5218-ce40-4eb3-9473-fcb238776229
+label: 'Samson products'
+id: samson_products
+description: ''
+help: ''
+import_period: -1
+fetcher: directory
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  allowed_schemes:
+    public: public
+  recursive_scan: false
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: 'entity:unpublish_action:node'
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: samson_products
+custom_sources:
+  kod:
+    label: Код
+    value: Код
+    machine_name: kod
+  naimenovanie:
+    label: Наименование
+    value: Наименование
+    machine_name: naimenovanie
+  cena:
+    label: Цена
+    value: Цена
+    machine_name: cena
+  shtrikhkod:
+    label: Штрихкод
+    value: Штрихкод
+    machine_name: shtrikhkod
+  upakovka:
+    label: Упаковка
+    value: Упаковка
+    machine_name: upakovka
+  kategoriya:
+    label: Категория
+    value: Категория
+    machine_name: kategoriya
+  strana:
+    label: Страна
+    value: Страна
+    machine_name: strana
+  brend:
+    label: Бренд
+    value: Бренд
+    machine_name: brend
+  artikul:
+    label: Артикул
+    value: Артикул
+    machine_name: artikul
+  opisanie:
+    label: Описание
+    value: Описание
+    machine_name: opisanie
+  foto:
+    label: Фото
+    value: Фото
+    machine_name: foto
+  param:
+    label: Param
+    value: Param
+    machine_name: param
+  min_part_:
+    label: 'Мин. парт.'
+    value: 'Мин. парт.'
+    machine_name: min_part_
+  image_path:
+    label: 'Image path'
+    value: 'Image path'
+    machine_name: image_path
+mappings:
+  -
+    target: title
+    map:
+      value: kod
+    unique:
+      value: '1'
+  -
+    target: field_name
+    map:
+      value: naimenovanie
+    unique: {  }
+  -
+    target: field_price
+    map:
+      value: cena
+  -
+    target: field_barcode
+    map:
+      value: shtrikhkod
+    unique: {  }
+  -
+    target: field_shema
+    map:
+      value: upakovka
+    unique: {  }
+  -
+    target: field_catalog_samson
+    map:
+      target_id: kategoriya
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_country
+    map:
+      target_id: strana
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_brand
+    map:
+      target_id: brend
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_sku_m
+    map:
+      value: artikul
+    unique: {  }
+  -
+    target: body
+    map:
+      value: opisanie
+      summary: ''
+    settings:
+      format: plain_text
+  -
+    target: field_photo_path_to_arena
+    map:
+      value: foto
+  -
+    target: field_param
+    map:
+      value: param
+  -
+    target: field_min_pack
+    map:
+      value: min_part_
+  -
+    target: field_step
+    map:
+      value: min_part_
+  -
+    target: field_photo_path
+    map:
+      value: image_path

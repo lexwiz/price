@@ -1,0 +1,19 @@
+uuid: 876e145b-9c4a-4909-8275-391db2732ace
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sku_m
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_sku_m
+field_name: field_sku_m
+entity_type: node
+bundle: kanzarena_products
+label: 'SKU M'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

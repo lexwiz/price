@@ -1,0 +1,18 @@
+uuid: 4868f4c2-5184-4c3a-b696-44d2b0f85ee7
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Relef products'
+type: relef_products
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

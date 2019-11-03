@@ -1,0 +1,19 @@
+uuid: 481406be-1f14-4a22-80e4-fbea93bbdfed
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shema
+    - node.type.samson_products
+id: node.samson_products.field_shema
+field_name: field_shema
+entity_type: node
+bundle: samson_products
+label: Shema
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

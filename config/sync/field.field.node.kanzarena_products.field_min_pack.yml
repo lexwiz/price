@@ -1,0 +1,23 @@
+uuid: 54a60fe9-8502-4503-90ba-7891760ca7d7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_pack
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_min_pack
+field_name: field_min_pack
+entity_type: node
+bundle: kanzarena_products
+label: 'Min Pack'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,31 @@
+uuid: fb097606-6504-470d-8c33-8c792b5ebd69
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.samson_products.body
+    - node.type.samson_products
+  module:
+    - text
+    - user
+id: node.samson_products.teaser
+targetEntityType: node
+bundle: samson_products
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

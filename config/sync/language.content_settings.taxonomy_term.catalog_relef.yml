@@ -1,0 +1,11 @@
+uuid: 14c1543e-a82e-4924-8b0e-77a6c320fdda
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.catalog_relef
+id: taxonomy_term.catalog_relef
+target_entity_type_id: taxonomy_term
+target_bundle: catalog_relef
+default_langcode: site_default
+language_alterable: false

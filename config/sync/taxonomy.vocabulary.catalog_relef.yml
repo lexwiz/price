@@ -1,0 +1,8 @@
+uuid: 1e186fe6-f406-4461-9f71-7092bb0616a7
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Catalog Relef'
+vid: catalog_relef
+description: ''
+weight: 0

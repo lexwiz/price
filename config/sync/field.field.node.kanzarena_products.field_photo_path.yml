@@ -1,0 +1,19 @@
+uuid: 94aa6255-d871-48a6-8d32-eaec51bb16f6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_path
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_photo_path
+field_name: field_photo_path
+entity_type: node
+bundle: kanzarena_products
+label: 'Photo path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,8 @@
+uuid: c95d4702-fd7c-4eee-8653-a7be7b9574ea
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Catalog KanzArena'
+vid: catalog_kanzarena
+description: ''
+weight: 0

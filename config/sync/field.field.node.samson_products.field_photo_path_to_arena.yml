@@ -1,0 +1,19 @@
+uuid: a8b6985a-3850-4c2d-9e5a-9d3d3ec7da74
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_path_to_arena
+    - node.type.samson_products
+id: node.samson_products.field_photo_path_to_arena
+field_name: field_photo_path_to_arena
+entity_type: node
+bundle: samson_products
+label: 'Photo path to Arena'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

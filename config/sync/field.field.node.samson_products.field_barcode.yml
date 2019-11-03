@@ -1,0 +1,19 @@
+uuid: 608c2a70-3107-461e-909f-5a58438b2eed
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_barcode
+    - node.type.samson_products
+id: node.samson_products.field_barcode
+field_name: field_barcode
+entity_type: node
+bundle: samson_products
+label: Barcode
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

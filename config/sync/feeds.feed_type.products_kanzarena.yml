@@ -1,0 +1,215 @@
+uuid: df61494b-5e9a-4911-8ce7-9c6f53b585d1
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.kanzarena_products.body
+    - field.field.node.kanzarena_products.field_barcode
+    - field.field.node.kanzarena_products.field_brand
+    - field.field.node.kanzarena_products.field_catalog_kanzarena
+    - field.field.node.kanzarena_products.field_code_ro
+    - field.field.node.kanzarena_products.field_code_so
+    - field.field.node.kanzarena_products.field_country
+    - field.field.node.kanzarena_products.field_min_pack
+    - field.field.node.kanzarena_products.field_param
+    - field.field.node.kanzarena_products.field_photo_path
+    - field.field.node.kanzarena_products.field_photo_path_to_arena
+    - field.field.node.kanzarena_products.field_shema
+    - field.field.node.kanzarena_products.field_sku_m
+    - field.field.node.kanzarena_products.field_step
+    - field.field.node.kanzarena_products.field_stock
+    - node.type.kanzarena_products
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      ed38206e-10e4-43fc-9cf8-982c2dec627f:
+        num_char: 15
+        ellipses: false
+        wordsafe: false
+        plugin: truncate_text
+        source: barcode
+        weight: 0
+        label: Truncate
+        uuid: ed38206e-10e4-43fc-9cf8-982c2dec627f
+label: 'Products KanzArena'
+id: products_kanzarena
+description: ''
+help: ''
+import_period: -1
+fetcher: directory
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  allowed_schemes:
+    public: public
+  recursive_scan: false
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: kanzarena_products
+custom_sources:
+  cro:
+    label: CRO
+    value: CRO
+    machine_name: cro
+  cbs:
+    label: CBS
+    value: CBS
+    machine_name: cbs
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  min:
+    label: Min
+    value: Min
+    machine_name: min
+  schema:
+    label: Schema
+    value: Schema
+    machine_name: schema
+  barcode:
+    label: Barcode
+    value: Barcode
+    machine_name: barcode
+  stock:
+    label: Stock
+    value: Stock
+    machine_name: stock
+  category:
+    label: Category
+    value: Category
+    machine_name: category
+  country:
+    label: Country
+    value: Country
+    machine_name: country
+  manufacturers:
+    label: Manufacturers
+    value: Manufacturers
+    machine_name: manufacturers
+  sku_m:
+    label: 'SKU M'
+    value: 'SKU M'
+    machine_name: sku_m
+  image:
+    label: Image
+    value: Image
+    machine_name: image
+  body:
+    label: Body
+    value: Body
+    machine_name: body
+  attributes:
+    label: Attributes
+    value: Attributes
+    machine_name: attributes
+  photo_path:
+    label: 'Photo path'
+    value: 'Photo path'
+    machine_name: photo_path
+mappings:
+  -
+    target: field_code_ro
+    map:
+      target_id: cro
+    settings:
+      reference_by: title
+      feeds_item: guid
+      autocreate: 0
+  -
+    target: field_code_so
+    map:
+      target_id: cbs
+    settings:
+      reference_by: title
+      autocreate: false
+      feeds_item: false
+  -
+    target: title
+    map:
+      value: title
+    unique:
+      value: '1'
+  -
+    target: field_min_pack
+    map:
+      value: min
+  -
+    target: field_step
+    map:
+      value: min
+  -
+    target: field_shema
+    map:
+      value: schema
+    unique: {  }
+  -
+    target: field_barcode
+    map:
+      value: barcode
+    unique: {  }
+  -
+    target: field_stock
+    map:
+      value: stock
+  -
+    target: field_catalog_kanzarena
+    map:
+      target_id: category
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_country
+    map:
+      target_id: country
+    settings:
+      reference_by: name
+      autocreate: false
+  -
+    target: field_brand
+    map:
+      target_id: manufacturers
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_sku_m
+    map:
+      value: sku_m
+    unique:
+      value: '1'
+  -
+    target: field_photo_path_to_arena
+    map:
+      value: photo_path
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      format: plain_text
+  -
+    target: field_param
+    map:
+      value: attributes
+  -
+    target: field_photo_path
+    map:
+      value: image

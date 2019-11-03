@@ -1,0 +1,20 @@
+uuid: bd0d3e0f-6f14-4135-a08a-0ca945b228fb
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_min_pack
+field_name: field_min_pack
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

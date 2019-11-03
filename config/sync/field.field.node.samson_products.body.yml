@@ -1,0 +1,22 @@
+uuid: fbb3c22c-9f41-4913-8261-ad3b198b7eeb
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.samson_products
+  module:
+    - text
+id: node.samson_products.body
+field_name: body
+entity_type: node
+bundle: samson_products
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

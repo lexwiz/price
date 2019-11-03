@@ -1,0 +1,29 @@
+uuid: 372abc1b-51b8-416c-a1fc-cf8bc7468dcb
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_catalog_samson
+    - node.type.samson_products
+    - taxonomy.vocabulary.catalog_samson
+id: node.samson_products.field_catalog_samson
+field_name: field_catalog_samson
+entity_type: node
+bundle: samson_products
+label: 'Catalog Samson'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      catalog_samson: catalog_samson
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: catalog_samson
+field_type: entity_reference

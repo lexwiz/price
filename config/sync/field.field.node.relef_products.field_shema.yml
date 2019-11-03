@@ -1,0 +1,19 @@
+uuid: 17d52b38-9184-42ba-ad31-dc6fd7153d78
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shema
+    - node.type.relef_products
+id: node.relef_products.field_shema
+field_name: field_shema
+entity_type: node
+bundle: relef_products
+label: Shema
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

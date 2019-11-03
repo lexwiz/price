@@ -1,0 +1,19 @@
+uuid: 5921cbd4-ef58-448c-b063-547ec01fee07
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.samson_products
+id: node.samson_products.field_name
+field_name: field_name
+entity_type: node
+bundle: samson_products
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

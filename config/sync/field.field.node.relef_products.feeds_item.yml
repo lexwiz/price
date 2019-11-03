@@ -1,0 +1,23 @@
+uuid: e4346eb0-ea0a-406f-8bbd-195423b3706c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.relef_products
+  module:
+    - feeds
+id: node.relef_products.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: relef_products
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

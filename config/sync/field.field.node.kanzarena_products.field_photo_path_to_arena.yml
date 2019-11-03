@@ -1,0 +1,19 @@
+uuid: 902f0f58-9ab9-4f6e-b21c-64753622a144
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_path_to_arena
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_photo_path_to_arena
+field_name: field_photo_path_to_arena
+entity_type: node
+bundle: kanzarena_products
+label: 'Photo path to Arena'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

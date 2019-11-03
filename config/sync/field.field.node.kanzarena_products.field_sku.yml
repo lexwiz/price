@@ -1,0 +1,23 @@
+uuid: 31e97bbf-4425-45e0-975c-c8c2393f7b2b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sku
+    - node.type.kanzarena_products
+  module:
+    - serial
+id: node.kanzarena_products.field_sku
+field_name: field_sku
+entity_type: node
+bundle: kanzarena_products
+label: SKU
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: serial

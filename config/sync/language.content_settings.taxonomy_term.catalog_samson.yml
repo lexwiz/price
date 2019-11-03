@@ -1,0 +1,11 @@
+uuid: 9b166407-fc7d-490b-912b-ccd2bfbea312
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.catalog_samson
+id: taxonomy_term.catalog_samson
+target_entity_type_id: taxonomy_term
+target_bundle: catalog_samson
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: f3f55e80-944c-44ee-b3a6-8abedba045a7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stock
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_stock
+field_name: field_stock
+entity_type: node
+bundle: kanzarena_products
+label: Stock
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

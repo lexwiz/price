@@ -1,0 +1,11 @@
+uuid: 94056f2e-4a9d-4f3e-969c-810a41a0476f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.catalog_kanzarena
+id: taxonomy_term.catalog_kanzarena
+target_entity_type_id: taxonomy_term
+target_bundle: catalog_kanzarena
+default_langcode: site_default
+language_alterable: false

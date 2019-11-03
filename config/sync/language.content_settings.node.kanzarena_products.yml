@@ -1,0 +1,11 @@
+uuid: 6370c449-9dee-4ec1-976a-998208c9019e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.kanzarena_products
+id: node.kanzarena_products
+target_entity_type_id: node
+target_bundle: kanzarena_products
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,28 @@
+uuid: 17acfea6-d0af-4954-874c-1f1f49075c47
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_so
+    - node.type.kanzarena_products
+    - node.type.samson_products
+id: node.kanzarena_products.field_code_so
+field_name: field_code_so
+entity_type: node
+bundle: kanzarena_products
+label: 'Code SO'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      samson_products: samson_products
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 01961239-2ddb-4d92-b98b-10e251b5e337
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_pack
+    - node.type.samson_products
+id: node.samson_products.field_min_pack
+field_name: field_min_pack
+entity_type: node
+bundle: samson_products
+label: 'Min Pack'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

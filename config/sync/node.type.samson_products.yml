@@ -1,0 +1,18 @@
+uuid: 7c311167-110d-4f11-8386-431ba8c28825
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Samson Products'
+type: samson_products
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

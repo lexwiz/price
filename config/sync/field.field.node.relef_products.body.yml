@@ -1,0 +1,22 @@
+uuid: cfe96c16-dc80-4805-9c8a-11d6b987477b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.relef_products
+  module:
+    - text
+id: node.relef_products.body
+field_name: body
+entity_type: node
+bundle: relef_products
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

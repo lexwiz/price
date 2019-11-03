@@ -1,0 +1,19 @@
+uuid: 5405f8ce-4ea1-47e5-91ff-f98d2900ef38
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sku_m
+    - node.type.relef_products
+id: node.relef_products.field_sku_m
+field_name: field_sku_m
+entity_type: node
+bundle: relef_products
+label: 'SKU M'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

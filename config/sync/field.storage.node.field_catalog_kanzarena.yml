@@ -1,0 +1,20 @@
+uuid: c2278f98-d2fe-4c13-8d53-4559f782e74e
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_catalog_kanzarena
+field_name: field_catalog_kanzarena
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

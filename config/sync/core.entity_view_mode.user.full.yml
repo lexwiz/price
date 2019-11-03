@@ -1,0 +1,12 @@
+uuid: 90671404-9361-4921-882e-42974b467fa5
+langcode: ru
+status: false
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: mQIF_foYjmnVSr9MpcD4CTaJE_FpO1AyDd_DskztGhM
+id: user.full
+label: 'Учётная запись пользователя'
+targetEntityType: user
+cache: true

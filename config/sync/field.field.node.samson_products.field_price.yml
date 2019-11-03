@@ -1,0 +1,23 @@
+uuid: 1baa4ddd-d580-4251-a7c6-cdb82d250dc9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.samson_products
+id: node.samson_products.field_price
+field_name: field_price
+entity_type: node
+bundle: samson_products
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

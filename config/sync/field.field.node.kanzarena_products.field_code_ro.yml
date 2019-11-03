@@ -1,0 +1,28 @@
+uuid: 369b48c5-3900-4dda-b5e1-ec30c4b5487b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_ro
+    - node.type.kanzarena_products
+    - node.type.relef_products
+id: node.kanzarena_products.field_code_ro
+field_name: field_code_ro
+entity_type: node
+bundle: kanzarena_products
+label: 'Code RO'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      relef_products: relef_products
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

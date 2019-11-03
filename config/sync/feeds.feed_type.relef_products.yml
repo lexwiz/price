@@ -1,0 +1,202 @@
+uuid: ee0acec5-78a1-455c-a85b-a15267ac9341
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.relef_products.body
+    - field.field.node.relef_products.field_barcode
+    - field.field.node.relef_products.field_brand
+    - field.field.node.relef_products.field_catalog_relef
+    - field.field.node.relef_products.field_country
+    - field.field.node.relef_products.field_min_pack
+    - field.field.node.relef_products.field_name
+    - field.field.node.relef_products.field_param
+    - field.field.node.relef_products.field_photo_path
+    - field.field.node.relef_products.field_photo_path_to_arena
+    - field.field.node.relef_products.field_price
+    - field.field.node.relef_products.field_shema
+    - field.field.node.relef_products.field_sku_m
+    - field.field.node.relef_products.field_step
+    - node.type.relef_products
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      4500ee73-635a-4071-9705-95c97de53d32:
+        num_char: 15
+        ellipses: false
+        wordsafe: false
+        plugin: truncate_text
+        source: barcode
+        weight: 0
+        label: Truncate
+        uuid: 4500ee73-635a-4071-9705-95c97de53d32
+label: 'Relef products'
+id: relef_products
+description: ''
+help: ''
+import_period: -1
+fetcher: directory
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  allowed_schemes:
+    public: public
+  recursive_scan: false
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: node_unpublish_action
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: relef_products
+custom_sources:
+  code:
+    label: Code
+    value: Code
+    machine_name: code
+  name:
+    label: Name
+    value: Name
+    machine_name: name
+  sku_m:
+    label: Sku_m
+    value: Sku_m
+    machine_name: sku_m
+  brand:
+    label: Brand
+    value: Brand
+    machine_name: brand
+  country:
+    label: Country
+    value: Country
+    machine_name: country
+  category:
+    label: Category
+    value: Category
+    machine_name: category
+  price:
+    label: Price
+    value: Price
+    machine_name: price
+  barcode:
+    label: Barcode
+    value: Barcode
+    machine_name: barcode
+  min:
+    label: Min
+    value: Min
+    machine_name: min
+  step:
+    label: Step
+    value: Step
+    machine_name: step
+  html:
+    label: Html
+    value: Html
+    machine_name: html
+  text:
+    label: Text
+    value: Text
+    machine_name: text
+  property:
+    label: Property
+    value: Property
+    machine_name: property
+  photo:
+    label: Photo
+    value: Photo
+    machine_name: photo
+  photo_ro:
+    label: Photo_ro
+    value: Photo_ro
+    machine_name: photo_ro
+mappings:
+  -
+    target: title
+    map:
+      value: code
+    unique:
+      value: '1'
+  -
+    target: field_name
+    map:
+      value: name
+    unique: {  }
+  -
+    target: field_sku_m
+    map:
+      value: sku_m
+    unique: {  }
+  -
+    target: field_brand
+    map:
+      target_id: brand
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_country
+    map:
+      target_id: country
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_catalog_relef
+    map:
+      target_id: category
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_price
+    map:
+      value: price
+  -
+    target: field_barcode
+    map:
+      value: barcode
+    unique: {  }
+  -
+    target: field_min_pack
+    map:
+      value: min
+  -
+    target: field_step
+    map:
+      value: step
+  -
+    target: field_shema
+    map:
+      value: html
+    unique: {  }
+  -
+    target: body
+    map:
+      value: text
+      summary: ''
+    settings:
+      format: plain_text
+  -
+    target: field_param
+    map:
+      value: property
+  -
+    target: field_photo_path_to_arena
+    map:
+      value: photo
+  -
+    target: field_photo_path
+    map:
+      value: photo_ro

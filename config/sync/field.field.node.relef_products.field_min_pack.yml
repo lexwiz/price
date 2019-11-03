@@ -1,0 +1,23 @@
+uuid: bf9a0d58-6c25-450c-a105-d48ecedee3a9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_pack
+    - node.type.relef_products
+id: node.relef_products.field_min_pack
+field_name: field_min_pack
+entity_type: node
+bundle: relef_products
+label: 'Min Pack'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

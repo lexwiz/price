@@ -1,0 +1,29 @@
+uuid: 5ed5c599-9761-4f53-aebe-8c6fdb2681c7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand
+    - node.type.relef_products
+    - taxonomy.vocabulary.brand
+id: node.relef_products.field_brand
+field_name: field_brand
+entity_type: node
+bundle: relef_products
+label: Brand
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      brand: brand
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

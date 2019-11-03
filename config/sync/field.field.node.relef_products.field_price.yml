@@ -1,0 +1,23 @@
+uuid: 4e7ec60c-1de1-47bf-b193-66e98c6845d0
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.relef_products
+id: node.relef_products.field_price
+field_name: field_price
+entity_type: node
+bundle: relef_products
+label: Price
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

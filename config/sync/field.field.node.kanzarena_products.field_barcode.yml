@@ -1,0 +1,19 @@
+uuid: 61c08e5e-528e-436a-bbe4-563b17f270fc
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_barcode
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_barcode
+field_name: field_barcode
+entity_type: node
+bundle: kanzarena_products
+label: Barcode
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

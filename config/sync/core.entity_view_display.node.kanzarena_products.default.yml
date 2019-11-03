@@ -1,0 +1,166 @@
+uuid: 3a900d02-aeb0-4678-b467-7348257cb364
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.kanzarena_products.body
+    - field.field.node.kanzarena_products.feeds_item
+    - field.field.node.kanzarena_products.field_barcode
+    - field.field.node.kanzarena_products.field_brand
+    - field.field.node.kanzarena_products.field_catalog_kanzarena
+    - field.field.node.kanzarena_products.field_code_ro
+    - field.field.node.kanzarena_products.field_code_so
+    - field.field.node.kanzarena_products.field_country
+    - field.field.node.kanzarena_products.field_min_pack
+    - field.field.node.kanzarena_products.field_param
+    - field.field.node.kanzarena_products.field_photo_path
+    - field.field.node.kanzarena_products.field_photo_path_to_arena
+    - field.field.node.kanzarena_products.field_shema
+    - field.field.node.kanzarena_products.field_sku
+    - field.field.node.kanzarena_products.field_sku_m
+    - field.field.node.kanzarena_products.field_step
+    - field.field.node.kanzarena_products.field_stock
+    - node.type.kanzarena_products
+  module:
+    - serial
+    - text
+    - user
+id: node.kanzarena_products.default
+targetEntityType: node
+bundle: kanzarena_products
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_barcode:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_brand:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_catalog_kanzarena:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_code_ro:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_code_so:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_country:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_min_pack:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_param:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_photo_path:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_photo_path_to_arena:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_shema:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sku:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: serial_default_formatter
+    region: content
+  field_sku_m:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_step:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_stock:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  langcode: true

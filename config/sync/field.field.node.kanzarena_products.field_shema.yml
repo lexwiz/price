@@ -1,0 +1,19 @@
+uuid: 8eace93f-b54f-426a-b9f8-6ee602dcd4c7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shema
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_shema
+field_name: field_shema
+entity_type: node
+bundle: kanzarena_products
+label: Shema
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

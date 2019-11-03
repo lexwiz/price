@@ -1,0 +1,23 @@
+uuid: 304e2175-2f1a-4dae-a789-eee40e5a8195
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_step
+    - node.type.samson_products
+id: node.samson_products.field_step
+field_name: field_step
+entity_type: node
+bundle: samson_products
+label: Step
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

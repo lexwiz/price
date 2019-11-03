@@ -1,0 +1,23 @@
+uuid: 0f879f8f-9863-4919-8a6b-fc6450a54ce4
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.kanzarena_products
+  module:
+    - feeds
+id: node.kanzarena_products.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: kanzarena_products
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

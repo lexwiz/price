@@ -1,0 +1,23 @@
+uuid: 096e8c81-649e-493b-b066-f7b42e0ae4ff
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_step
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_step
+field_name: field_step
+entity_type: node
+bundle: kanzarena_products
+label: Step
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

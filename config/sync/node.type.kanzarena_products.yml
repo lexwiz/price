@@ -1,0 +1,18 @@
+uuid: 607a6933-b731-47dd-8b95-52bc697a9a7f
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'KanzArena products'
+type: kanzarena_products
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,11 @@
+uuid: 75f334e3-8db0-4bd9-8803-6bf4fe15e2cc
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.relef_products
+id: node.relef_products
+target_entity_type_id: node
+target_bundle: relef_products
+default_langcode: site_default
+language_alterable: false

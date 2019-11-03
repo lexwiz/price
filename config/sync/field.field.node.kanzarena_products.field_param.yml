@@ -1,0 +1,19 @@
+uuid: d4abe0f9-74e7-49f3-892c-55a3b0b97872
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_param
+    - node.type.kanzarena_products
+id: node.kanzarena_products.field_param
+field_name: field_param
+entity_type: node
+bundle: kanzarena_products
+label: Param
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

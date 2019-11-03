@@ -1,0 +1,8 @@
+uuid: a8c30107-4ada-4c54-af7a-15d414008bb8
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Catalog Samson'
+vid: catalog_samson
+description: ''
+weight: 0

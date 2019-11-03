@@ -1,0 +1,31 @@
+uuid: 54b04f1a-ccd4-4a5b-b4f4-b448dbfa77c9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.kanzarena_products.body
+    - node.type.kanzarena_products
+  module:
+    - text
+    - user
+id: node.kanzarena_products.teaser
+targetEntityType: node
+bundle: kanzarena_products
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
