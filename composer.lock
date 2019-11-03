@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f26317ff1562961ad2017a807461c108",
+    "content-hash": "70580a631748004decbca12793f05ec6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3282,6 +3282,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Support for batch operations": "https://www.drupal.org/files/issues/2019-10-04/views-data-export-support-for-batch-operations-2789531-277.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

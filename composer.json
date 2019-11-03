@@ -85,6 +85,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "patches": {
+          "drupal/views_data_export": {
+            "Support for batch operations": "https://www.drupal.org/files/issues/2019-10-04/views-data-export-support-for-batch-operations-2789531-277.patch"
+          }
         }
     }
 }
