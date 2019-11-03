@@ -10,6 +10,7 @@ dependencies:
     - field.storage.node.field_country
     - field.storage.node.field_name
     - field.storage.node.field_price
+    - field.storage.node.field_sku
     - field.storage.node.field_sku_m
     - field.storage.node.field_stock
     - flag.flag.bookmark
@@ -22,8 +23,10 @@ dependencies:
   module:
     - flag
     - node
+    - serial
     - taxonomy
     - user
+    - views_bulk_operations
 id: supplier
 label: Supplier
 module: views
@@ -205,14 +208,14 @@ display:
       row:
         type: fields
       fields:
-        node_bulk_form:
-          id: node_bulk_form
-          table: node
-          field: node_bulk_form
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Форма массовых операций с материалами'
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -245,7 +248,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -253,11 +256,66 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Действие
-          include_exclude: exclude
-          selected_actions: {  }
-          entity_type: node
-          plugin_id: node_bulk_form
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          clear_on_exposed: false
+          action_title: Action
+          selected_actions:
+            comment_delete_action: comment_delete_action
+            'flag_action:bookmark_flag': 'flag_action:bookmark_flag'
+            'flag_action:bookmark_unflag': 'flag_action:bookmark_unflag'
+            node_unpromote_action: node_unpromote_action
+            node_make_sticky_action: node_make_sticky_action
+            node_unpublish_action: node_unpublish_action
+            node_promote_action: node_promote_action
+            node_unpublish_by_keyword_action: node_unpublish_by_keyword_action
+            node_assign_owner_action: node_assign_owner_action
+            node_save_action: node_save_action
+            node_publish_action: node_publish_action
+            node_make_unsticky_action: node_make_unsticky_action
+            views_bulk_operations_delete_entity: views_bulk_operations_delete_entity
+            'entity:unpublish_action:node': 'entity:unpublish_action:node'
+            'entity:publish_action:node': 'entity:publish_action:node'
+            'entity:save_action:node': 'entity:save_action:node'
+            'entity:delete_action:node': 'entity:delete_action:node'
+          preconfiguration:
+            comment_delete_action:
+              label_override: ''
+            'flag_action:bookmark_flag':
+              label_override: ''
+            'flag_action:bookmark_unflag':
+              label_override: ''
+            node_unpromote_action:
+              label_override: ''
+            node_make_sticky_action:
+              label_override: ''
+            node_unpublish_action:
+              label_override: ''
+            node_promote_action:
+              label_override: ''
+            node_unpublish_by_keyword_action:
+              label_override: ''
+            node_assign_owner_action:
+              label_override: ''
+            node_save_action:
+              label_override: ''
+            node_publish_action:
+              label_override: ''
+            node_make_unsticky_action:
+              label_override: ''
+            views_bulk_operations_delete_entity:
+              label_override: ''
+            'entity:unpublish_action:node':
+              label_override: ''
+            'entity:publish_action:node':
+              label_override: ''
+            'entity:save_action:node':
+              label_override: ''
+            'entity:delete_action:node':
+              label_override: ''
+          plugin_id: views_bulk_operations_bulk_form
         status:
           id: status
           table: node_field_data
@@ -753,6 +811,132 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_sku:
+          id: field_sku
+          table: node__field_sku
+          field: field_sku
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: SKU
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: serial_default_formatter
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_stock:
+          id: field_stock
+          table: node__field_stock
+          field: field_stock
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: Stock
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_barcode:
           id: field_barcode
           table: node__field_barcode
@@ -949,70 +1133,6 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: changed
-          plugin_id: field
-        field_stock:
-          id: field_stock
-          table: node__field_stock
-          field: field_stock
-          relationship: reverse__node__field_code_ro
-          group_type: group
-          admin_label: ''
-          label: Stock
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
           plugin_id: field
         link_flag:
           id: link_flag
@@ -1317,62 +1437,6 @@ display:
           plugin_id: boolean
           entity_type: node
           entity_field: status
-        field_sku_value:
-          id: field_sku_value
-          table: node__field_sku
-          field: field_sku_value
-          relationship: reverse__node__field_code_ro
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_sku_value_op
-            label: 'SKU (field_sku)'
-            description: null
-            use_operator: false
-            operator: field_sku_value_op
-            identifier: field_sku_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: null
-            min_placeholder: null
-            max_placeholder: null
-          is_grouped: true
-          group_info:
-            label: SKU
-            description: ''
-            identifier: field_sku_value
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: 'НЕ Добавлен'
-                operator: empty
-                value:
-                  value: ''
-                  min: ''
-                  max: ''
-              2:
-                title: Добавлен
-                operator: 'not empty'
-                value:
-                  value: ''
-                  min: ''
-                  max: ''
-          plugin_id: numeric
         flagged:
           id: flagged
           table: flagging
@@ -1506,6 +1570,118 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: date
+        field_sku_value:
+          id: field_sku_value
+          table: node__field_sku
+          field: field_sku_value
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_sku_value_op
+            label: 'SKU (field_sku)'
+            description: null
+            use_operator: false
+            operator: field_sku_value_op
+            identifier: field_sku_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: SKU
+            description: ''
+            identifier: field_sku_value
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: 'НЕ Добавлен'
+                operator: empty
+                value:
+                  value: ''
+                  min: ''
+                  max: ''
+              2:
+                title: Добавлен
+                operator: 'not empty'
+                value:
+                  value: ''
+                  min: ''
+                  max: ''
+          plugin_id: numeric
+        field_stock_value:
+          id: field_stock_value
+          table: node__field_stock
+          field: field_stock_value
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_stock_value_op
+            label: 'Stock (field_stock)'
+            description: null
+            use_operator: false
+            operator: field_stock_value_op
+            identifier: field_stock_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: Stock
+            description: ''
+            identifier: field_stock_value
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Пусто
+                operator: '<='
+                value:
+                  value: '0'
+                  min: ''
+                  max: ''
+              2:
+                title: 'Не пусто'
+                operator: '>'
+                value:
+                  value: '0'
+                  min: ''
+                  max: ''
+          plugin_id: numeric
       sorts:
         created:
           id: created
@@ -1583,6 +1759,7 @@ display:
         - 'config:field.storage.node.field_country'
         - 'config:field.storage.node.field_name'
         - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_sku'
         - 'config:field.storage.node.field_sku_m'
         - 'config:field.storage.node.field_stock'
   page_1:
@@ -1619,6 +1796,7 @@ display:
         - 'config:field.storage.node.field_country'
         - 'config:field.storage.node.field_name'
         - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_sku'
         - 'config:field.storage.node.field_sku_m'
         - 'config:field.storage.node.field_stock'
   page_2:
@@ -1898,6 +2076,139 @@ display:
           plugin_id: boolean
           entity_type: node
           entity_field: status
+        flagged:
+          id: flagged
+          table: flagging
+          field: flagged
+          relationship: flag_relationship
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Flagged
+            description: ''
+            use_operator: false
+            operator: flagged_op
+            identifier: flagged
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: flagging
+          plugin_id: flag_filter
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: created_op
+            label: 'Время создания'
+            description: ''
+            use_operator: false
+            operator: created_op
+            identifier: created
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+        changed:
+          id: changed
+          table: node_field_data
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: changed_op
+            label: Изменение
+            description: ''
+            use_operator: false
+            operator: changed_op
+            identifier: changed
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: changed
+          plugin_id: date
         field_sku_value:
           id: field_sku_value
           table: node__field_sku
@@ -1954,58 +2265,75 @@ display:
                   min: ''
                   max: ''
           plugin_id: numeric
-        flagged:
-          id: flagged
-          table: flagging
-          field: flagged
-          relationship: flag_relationship
+        field_stock_value:
+          id: field_stock_value
+          table: node__field_stock
+          field: field_stock_value
+          relationship: reverse__node__field_code_so
           group_type: group
           admin_label: ''
           operator: '='
-          value: All
+          value:
+            min: ''
+            max: ''
+            value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: Flagged
-            description: ''
+            operator_id: field_stock_value_op
+            label: 'Stock (field_stock)'
+            description: null
             use_operator: false
-            operator: flagged_op
-            identifier: flagged
+            operator: field_stock_value_op
+            identifier: field_stock_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-          is_grouped: false
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
           group_info:
-            label: ''
+            label: Stock
             description: ''
-            identifier: ''
+            identifier: field_stock_value
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
-          entity_type: flagging
-          plugin_id: flag_filter
+            group_items:
+              1:
+                title: Пусто
+                operator: '<='
+                value:
+                  value: '0'
+                  min: ''
+                  max: ''
+              2:
+                title: 'Не пусто'
+                operator: '>'
+                value:
+                  value: '0'
+                  min: ''
+                  max: ''
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
       fields:
-        node_bulk_form:
-          id: node_bulk_form
-          table: node
-          field: node_bulk_form
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Форма массовых операций с материалами'
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -2038,7 +2366,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2046,11 +2374,66 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Действие
-          include_exclude: exclude
-          selected_actions: {  }
-          entity_type: node
-          plugin_id: node_bulk_form
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          clear_on_exposed: false
+          action_title: Action
+          selected_actions:
+            comment_delete_action: comment_delete_action
+            'flag_action:bookmark_flag': 'flag_action:bookmark_flag'
+            'flag_action:bookmark_unflag': 'flag_action:bookmark_unflag'
+            node_unpromote_action: node_unpromote_action
+            node_make_sticky_action: node_make_sticky_action
+            node_unpublish_action: node_unpublish_action
+            node_promote_action: node_promote_action
+            node_unpublish_by_keyword_action: node_unpublish_by_keyword_action
+            node_assign_owner_action: node_assign_owner_action
+            node_save_action: node_save_action
+            node_publish_action: node_publish_action
+            node_make_unsticky_action: node_make_unsticky_action
+            views_bulk_operations_delete_entity: views_bulk_operations_delete_entity
+            'entity:unpublish_action:node': 'entity:unpublish_action:node'
+            'entity:publish_action:node': 'entity:publish_action:node'
+            'entity:save_action:node': 'entity:save_action:node'
+            'entity:delete_action:node': 'entity:delete_action:node'
+          preconfiguration:
+            comment_delete_action:
+              label_override: ''
+            'flag_action:bookmark_flag':
+              label_override: ''
+            'flag_action:bookmark_unflag':
+              label_override: ''
+            node_unpromote_action:
+              label_override: ''
+            node_make_sticky_action:
+              label_override: ''
+            node_unpublish_action:
+              label_override: ''
+            node_promote_action:
+              label_override: ''
+            node_unpublish_by_keyword_action:
+              label_override: ''
+            node_assign_owner_action:
+              label_override: ''
+            node_save_action:
+              label_override: ''
+            node_publish_action:
+              label_override: ''
+            node_make_unsticky_action:
+              label_override: ''
+            views_bulk_operations_delete_entity:
+              label_override: ''
+            'entity:unpublish_action:node':
+              label_override: ''
+            'entity:publish_action:node':
+              label_override: ''
+            'entity:save_action:node':
+              label_override: ''
+            'entity:delete_action:node':
+              label_override: ''
+          plugin_id: views_bulk_operations_bulk_form
         status:
           id: status
           table: node_field_data
@@ -2546,6 +2929,132 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_sku:
+          id: field_sku
+          table: node__field_sku
+          field: field_sku
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: SKU
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: serial_default_formatter
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_stock:
+          id: field_stock
+          table: node__field_stock
+          field: field_stock
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: Stock
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_barcode:
           id: field_barcode
           table: node__field_barcode
@@ -2743,70 +3252,6 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-        field_stock:
-          id: field_stock
-          table: node__field_stock
-          field: field_stock
-          relationship: reverse__node__field_code_so
-          group_type: group
-          admin_label: ''
-          label: Stock
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         link_flag:
           id: link_flag
           table: flagging
@@ -2897,5 +3342,6 @@ display:
         - 'config:field.storage.node.field_country'
         - 'config:field.storage.node.field_name'
         - 'config:field.storage.node.field_price'
+        - 'config:field.storage.node.field_sku'
         - 'config:field.storage.node.field_sku_m'
         - 'config:field.storage.node.field_stock'

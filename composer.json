@@ -28,6 +28,7 @@
         "drupal/flag": "4.x-dev",
         "drupal/serial": "^1.0",
         "drupal/token": "^1.5",
+        "drupal/views_bulk_edit": "^2.4",
         "drupal/views_bulk_operations": "^3.3",
         "drupal/views_data_export": "^1.0",
         "drush/drush": "^9.0.0",

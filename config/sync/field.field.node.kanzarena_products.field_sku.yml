@@ -1,4 +1,4 @@
-uuid: 31e97bbf-4425-45e0-975c-c8c2393f7b2b
+uuid: 0c349ac2-2686-4f15-9c24-d1faffd2c010
 langcode: ru
 status: true
 dependencies:
@@ -17,7 +17,7 @@ required: false
 translatable: false
 default_value:
   -
-    value: 1
+    value: '1'
 default_value_callback: ''
 settings: {  }
 field_type: serial
