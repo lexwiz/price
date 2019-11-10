@@ -12,12 +12,10 @@ dependencies:
     - field.field.node.kanzarena_products.field_country
     - field.field.node.kanzarena_products.field_min_pack
     - field.field.node.kanzarena_products.field_param
-    - field.field.node.kanzarena_products.field_photo_path
     - field.field.node.kanzarena_products.field_photo_path_to_arena
     - field.field.node.kanzarena_products.field_shema
     - field.field.node.kanzarena_products.field_sku_m
     - field.field.node.kanzarena_products.field_step
-    - field.field.node.kanzarena_products.field_stock
     - node.type.kanzarena_products
   module:
     - feeds_tamper
@@ -122,6 +120,10 @@ custom_sources:
     label: 'Photo path'
     value: 'Photo path'
     machine_name: photo_path
+  brand:
+    label: Brand
+    value: Brand
+    machine_name: brand
 mappings:
   -
     target: field_code_ro
@@ -164,10 +166,6 @@ mappings:
       value: barcode
     unique: {  }
   -
-    target: field_stock
-    map:
-      value: stock
-  -
     target: field_catalog_kanzarena
     map:
       target_id: category
@@ -184,7 +182,7 @@ mappings:
   -
     target: field_brand
     map:
-      target_id: manufacturers
+      target_id: brand
     settings:
       reference_by: name
       autocreate: '1'
