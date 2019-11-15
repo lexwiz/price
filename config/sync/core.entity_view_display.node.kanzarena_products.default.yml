@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.kanzarena_products.field_code_so
     - field.field.node.kanzarena_products.field_country
     - field.field.node.kanzarena_products.field_min_pack
+    - field.field.node.kanzarena_products.field_name
     - field.field.node.kanzarena_products.field_param
     - field.field.node.kanzarena_products.field_photo_path
     - field.field.node.kanzarena_products.field_photo_path_to_arena
@@ -93,6 +94,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_name:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_param:
     weight: 14

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.kanzarena_products.field_code_so
     - field.field.node.kanzarena_products.field_country
     - field.field.node.kanzarena_products.field_min_pack
+    - field.field.node.kanzarena_products.field_name
     - field.field.node.kanzarena_products.field_param
     - field.field.node.kanzarena_products.field_photo_path
     - field.field.node.kanzarena_products.field_photo_path_to_arena
@@ -105,6 +106,14 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_name:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_param:
     weight: 21
     settings:
@@ -164,6 +173,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  flag:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
     region: content
   langcode:
     type: language_select

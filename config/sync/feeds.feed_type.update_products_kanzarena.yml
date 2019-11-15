@@ -1,0 +1,210 @@
+uuid: 11cf888d-ed73-4bec-b708-9eb53bb79c44
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.kanzarena_products.body
+    - field.field.node.kanzarena_products.field_barcode
+    - field.field.node.kanzarena_products.field_brand
+    - field.field.node.kanzarena_products.field_catalog_kanzarena
+    - field.field.node.kanzarena_products.field_code_ro
+    - field.field.node.kanzarena_products.field_code_so
+    - field.field.node.kanzarena_products.field_country
+    - field.field.node.kanzarena_products.field_min_pack
+    - field.field.node.kanzarena_products.field_name
+    - field.field.node.kanzarena_products.field_param
+    - field.field.node.kanzarena_products.field_photo_path
+    - field.field.node.kanzarena_products.field_shema
+    - field.field.node.kanzarena_products.field_sku_m
+    - field.field.node.kanzarena_products.field_step
+    - node.type.kanzarena_products
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      8d38eb13-9969-4fa4-a606-146a5de95984:
+        num_char: 15
+        ellipses: false
+        wordsafe: false
+        plugin: truncate_text
+        source: barcode
+        weight: 0
+        label: Truncate
+        uuid: 8d38eb13-9969-4fa4-a606-146a5de95984
+label: 'Update Products KanzArena'
+id: update_products_kanzarena
+description: ''
+help: ''
+import_period: -1
+fetcher: directory
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  allowed_schemes:
+    public: public
+  recursive_scan: false
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: kanzarena_products
+custom_sources:
+  '':
+    label: ''
+    value: ''
+    machine_name: ''
+  cro:
+    label: CRO
+    value: CRO
+    machine_name: cro
+  cbs:
+    label: CBS
+    value: CBS
+    machine_name: cbs
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  min:
+    label: Min
+    value: Min
+    machine_name: min
+  schema:
+    label: Schema
+    value: Schema
+    machine_name: schema
+  barcode:
+    label: Barcode
+    value: Barcode
+    machine_name: barcode
+  category_up:
+    label: 'Category Up'
+    value: 'Category Up'
+    machine_name: category_up
+  country:
+    label: Country
+    value: Country
+    machine_name: country
+  brand:
+    label: Brand
+    value: Brand
+    machine_name: brand
+  sku_m:
+    label: 'SKU M'
+    value: 'SKU M'
+    machine_name: sku_m
+  image:
+    label: Image
+    value: Image
+    machine_name: image
+  body:
+    label: Body
+    value: Body
+    machine_name: body
+  attributes:
+    label: Attributes
+    value: Attributes
+    machine_name: attributes
+  sku:
+    label: SKU
+    value: SKU
+    machine_name: sku
+mappings:
+  -
+    target: field_code_ro
+    map:
+      target_id: cro
+    settings:
+      reference_by: title
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_code_so
+    map:
+      target_id: cbs
+    settings:
+      reference_by: title
+      autocreate: false
+      feeds_item: false
+  -
+    target: title
+    map:
+      value: sku
+    unique:
+      value: '1'
+  -
+    target: field_min_pack
+    map:
+      value: min
+  -
+    target: field_step
+    map:
+      value: min
+  -
+    target: field_shema
+    map:
+      value: schema
+    unique: {  }
+  -
+    target: field_barcode
+    map:
+      value: barcode
+    unique: {  }
+  -
+    target: field_catalog_kanzarena
+    map:
+      target_id: category_up
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_country
+    map:
+      target_id: country
+    settings:
+      reference_by: name
+      autocreate: false
+  -
+    target: field_brand
+    map:
+      target_id: brand
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_sku_m
+    map:
+      value: sku_m
+    unique: {  }
+  -
+    target: field_photo_path
+    map:
+      value: image
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      format: plain_text
+  -
+    target: field_param
+    map:
+      value: attributes
+  -
+    target: field_name
+    map:
+      value: title
+    unique: {  }

@@ -6,8 +6,11 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_barcode
     - field.storage.node.field_brand
+    - field.storage.node.field_catalog_kanzarena
     - field.storage.node.field_catalog_relef
     - field.storage.node.field_catalog_samson
+    - field.storage.node.field_code_ro
+    - field.storage.node.field_code_so
     - field.storage.node.field_country
     - field.storage.node.field_min_pack
     - field.storage.node.field_name
@@ -1788,7 +1791,7 @@ display:
             delimiter: ;
             enclosure: '"'
             escape_char: \
-            strip_tags: true
+            strip_tags: false
             trim: true
             encoding: utf8
             utf8_bom: '0'
@@ -2056,7 +2059,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -2119,7 +2122,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -2182,7 +2185,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -2570,8 +2573,312 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_catalog_kanzarena:
+          id: field_catalog_kanzarena
+          table: node__field_catalog_kanzarena
+          field: field_catalog_kanzarena
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: 'Category Up'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 4
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_sku:
+          id: field_sku
+          table: node__field_sku
+          field: field_sku
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: SKU
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: serial_default_formatter
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_stock:
+          id: field_stock
+          table: node__field_stock
+          field: field_stock
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: Stock
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_code_so:
+          id: field_code_so
+          table: node__field_code_so
+          field: field_code_so
+          relationship: reverse__node__field_code_ro
+          group_type: group
+          admin_label: ''
+          label: CBS
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       defaults:
         fields: false
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: ''
+              raw_output: false
+            field_name:
+              alias: ''
+              raw_output: true
+            field_sku_m:
+              alias: ''
+              raw_output: false
+            field_brand:
+              alias: ''
+              raw_output: false
+            field_country:
+              alias: ''
+              raw_output: false
+            field_catalog_relef:
+              alias: ''
+              raw_output: true
+            field_barcode:
+              alias: ''
+              raw_output: false
+            field_min_pack:
+              alias: ''
+              raw_output: false
+            field_shema:
+              alias: ''
+              raw_output: false
+            field_photo_path:
+              alias: ''
+              raw_output: false
+            body:
+              alias: ''
+              raw_output: true
+            field_param:
+              alias: ''
+              raw_output: true
+            field_catalog_kanzarena:
+              alias: ''
+              raw_output: false
+            field_sku:
+              alias: ''
+              raw_output: false
+            field_stock:
+              alias: ''
+              raw_output: false
+            field_code_so:
+              alias: ''
+              raw_output: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -2586,14 +2893,18 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_barcode'
         - 'config:field.storage.node.field_brand'
+        - 'config:field.storage.node.field_catalog_kanzarena'
         - 'config:field.storage.node.field_catalog_relef'
+        - 'config:field.storage.node.field_code_so'
         - 'config:field.storage.node.field_country'
         - 'config:field.storage.node.field_min_pack'
         - 'config:field.storage.node.field_name'
         - 'config:field.storage.node.field_param'
         - 'config:field.storage.node.field_photo_path'
         - 'config:field.storage.node.field_shema'
+        - 'config:field.storage.node.field_sku'
         - 'config:field.storage.node.field_sku_m'
+        - 'config:field.storage.node.field_stock'
   data_export_2:
     display_plugin: data_export
     id: data_export_2
@@ -2992,7 +3303,7 @@ display:
           id: field_sku_value
           table: node__field_sku
           field: field_sku_value
-          relationship: reverse__node__field_code_ro
+          relationship: reverse__node__field_code_so
           group_type: group
           admin_label: ''
           operator: '='
@@ -3048,7 +3359,7 @@ display:
           id: field_stock_value
           table: node__field_stock
           field: field_stock_value
-          relationship: reverse__node__field_code_ro
+          relationship: reverse__node__field_code_so
           group_type: group
           admin_label: ''
           operator: '='
@@ -3104,6 +3415,7 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        relationships: false
       filter_groups:
         operator: AND
         groups:
@@ -3370,7 +3682,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -3433,7 +3745,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -3884,6 +4196,258 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_catalog_kanzarena:
+          id: field_catalog_kanzarena
+          table: node__field_catalog_kanzarena
+          field: field_catalog_kanzarena
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: 'Category Up'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 4
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_sku:
+          id: field_sku
+          table: node__field_sku
+          field: field_sku
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: SKU
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: serial_default_formatter
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_stock:
+          id: field_stock
+          table: node__field_stock
+          field: field_stock
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: Stock
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_code_ro:
+          id: field_code_ro
+          table: node__field_code_ro
+          field: field_code_ro
+          relationship: reverse__node__field_code_so
+          group_type: group
+          admin_label: ''
+          label: CRO
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       style:
         type: data_export
         options:
@@ -3893,11 +4457,74 @@ display:
             delimiter: ;
             enclosure: '"'
             escape_char: \
-            strip_tags: true
+            strip_tags: false
             trim: true
             encoding: utf8
             utf8_bom: '0'
             use_serializer_encode_only: false
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: ''
+              raw_output: false
+            field_name:
+              alias: ''
+              raw_output: true
+            field_sku_m:
+              alias: ''
+              raw_output: false
+            field_brand:
+              alias: ''
+              raw_output: false
+            field_country:
+              alias: ''
+              raw_output: false
+            field_catalog_samson:
+              alias: ''
+              raw_output: false
+            field_barcode:
+              alias: ''
+              raw_output: false
+            field_min_pack:
+              alias: ''
+              raw_output: false
+            field_shema:
+              alias: ''
+              raw_output: false
+            field_photo_path:
+              alias: ''
+              raw_output: false
+            body:
+              alias: ''
+              raw_output: true
+            field_param:
+              alias: ''
+              raw_output: true
+      relationships:
+        reverse__node__field_code_so:
+          id: reverse__node__field_code_so
+          table: node_field_data
+          field: reverse__node__field_code_so
+          relationship: none
+          group_type: group
+          admin_label: field_code_so
+          required: false
+          entity_type: node
+          plugin_id: entity_reverse
+        flag_relationship:
+          id: flag_relationship
+          table: node_field_data
+          field: flag_relationship
+          relationship: none
+          group_type: group
+          admin_label: Flags
+          required: false
+          flag: bookmark
+          user_scope: current
+          entity_type: node
+          plugin_id: flag_relationship
     cache_metadata:
       max-age: -1
       contexts:
@@ -3912,14 +4539,18 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_barcode'
         - 'config:field.storage.node.field_brand'
+        - 'config:field.storage.node.field_catalog_kanzarena'
         - 'config:field.storage.node.field_catalog_samson'
+        - 'config:field.storage.node.field_code_ro'
         - 'config:field.storage.node.field_country'
         - 'config:field.storage.node.field_min_pack'
         - 'config:field.storage.node.field_name'
         - 'config:field.storage.node.field_param'
         - 'config:field.storage.node.field_photo_path'
         - 'config:field.storage.node.field_shema'
+        - 'config:field.storage.node.field_sku'
         - 'config:field.storage.node.field_sku_m'
+        - 'config:field.storage.node.field_stock'
   page_1:
     display_plugin: page
     id: page_1
